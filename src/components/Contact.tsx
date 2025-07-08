@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React,{ useEffect, useRef, useState } from "react";
 import { Mail, Phone, MapPin, ChevronRight } from 'lucide-react'
 
 interface Props {

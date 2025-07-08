@@ -85,7 +85,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar, activeSection,
                 </nav>
 
                 {/* Contact Info */}
-                <div className="absolute bottom-6 left-6 right-6 text-slate-400 text-sm">
+                {/* <div className="absolute bottom-6 left-6 right-6 text-slate-400 text-sm">
                     <div className="flex items-center gap-2 mb-2">
                         <Mail size={14} />
                         <span>{data?.email || 'john@example.com'}</span>
@@ -98,7 +98,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar, activeSection,
                         <MapPin size={14} />
                         <span>{data?.location || 'San Francisco, CA'}</span>
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     );

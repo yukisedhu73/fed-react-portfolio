@@ -4,7 +4,6 @@ import { Download, Mail, Github, Linkedin, Twitter, ChevronRight, User, Eye } fr
 interface Props {
     data: any
 }
-
 const Header: React.FC<Props> = ({ data }) => {
     const [isVisible, setIsVisible] = useState(false);
 

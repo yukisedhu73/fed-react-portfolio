@@ -1,1 +1,96 @@
+/* Global CSS for Portfolio Website */
+/* Add this to your global CSS file (e.g., globals.css, index.css, or App.css) */
+
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 @import "tailwindcss";
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f172a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+
+@theme {
+  /* === Colors === */
+  --color-neon-cyan: #06b6d4;
+  --color-neon-purple: #8b5cf6;
+  --color-neon-pink: #ec4899;
+  --color-neon-green: #22c55e;
+  --color-neon-blue: #3b82f6;
+  --color-neon-yellow: #eab308;
+
+  --color-slate-750: #293548;
+  --color-slate-850: #1a202c;
+  --color-slate-925: #0f1419;
+
+  /* === Fonts === */
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-mono: Fira Code, Monaco, Consolas, monospace;
+
+  /* === Breakpoints === */
+  --screen-xs: 475px;
+  --screen-3xl: 1920px;
+
+  /* === Spacing === */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  /* === Border Radius === */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  /* === Font Sizes === */
+  --text-2xs: 0.625rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
+
+  /* === Z-Index === */
+  --z-60: 60;
+  --z-70: 70;
+  --z-80: 80;
+  --z-90: 90;
+  --z-100: 100;
+
+  /* === Transitions === */
+  --duration-2000: 2000ms;
+  --duration-3000: 3000ms;
+  --duration-4000: 4000ms;
+  --duration-5000: 5000ms;
+
+  --delay-2000: 2000ms;
+  --delay-3000: 3000ms;
+  --delay-4000: 4000ms;
+  --delay-5000: 5000ms;
+
+  /* === Background Sizes === */
+  --bg-size-grid: 50px 50px;
+
+  /* === Shadows === */
+  --shadow-neon: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+  --shadow-neon-purple: 0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.1);
+  --shadow-neon-pink: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(236, 72, 153, 0.3), 0 0 40px rgba(236, 72, 153, 0.1);
+  --shadow-glow-sm: 0 0 10px rgba(6, 182, 212, 0.3);
+  --shadow-glow-md: 0 0 20px rgba(6, 182, 212, 0.4);
+  --shadow-glow-lg: 0 0 30px rgba(6, 182, 212, 0.5);
+}
