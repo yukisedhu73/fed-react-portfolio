@@ -6,7 +6,7 @@ import Skills from "../components/Skills";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import Education from "../components/Education";
-import { Menu, X } from "lucide-react";
+import { Menu} from "lucide-react";
 
 const Portfolio = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -79,20 +79,21 @@ const Portfolio = () => {
                     className="hidden"
                     id="resume-upload"
                 />
-                <label
+                {/* <label
                     htmlFor="resume-upload"
                     className="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 rounded-lg cursor-pointer transition-colors duration-300 text-sm font-medium"
                 >
                     Upload Resume
-                </label>
+                </label> */}
             </div>
 
             {/* Mobile Menu Button */}
             <button
                 onClick={toggleSidebar}
-                className="fixed top-4 left-4 z-50 md:hidden p-2 bg-slate-800 rounded-lg border border-slate-700"
+                className={`fixed top-4 left-4 z-50 p-2 bg-slate-800 border border-slate-700 rounded-lg transition-opacity duration-300 ${sidebarOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                    }`}
             >
-                {sidebarOpen ? <X size={24} className="text-white" /> : <Menu size={24} className="text-white" />}
+                <Menu size={24} className="text-white" />
             </button>
 
             {/* Sidebar */}
@@ -104,7 +105,7 @@ const Portfolio = () => {
             />
 
             {/* Main Content */}
-            <div className="md:ml-80">
+            <div className="transition-all duration-300">
                 <Header data={portfolioData} />
                 <Skills data={portfolioData} />
                 <Experience data={portfolioData} />
