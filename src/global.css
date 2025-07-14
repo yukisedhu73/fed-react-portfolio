@@ -214,3 +214,9 @@
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
 }
+
+/* //gsap depencies classes  */
+.split-headline {
+  opacity: 1;
+  visibility: visible;
+}

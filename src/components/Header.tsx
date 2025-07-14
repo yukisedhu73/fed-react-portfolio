@@ -1,28 +1,88 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import { Download, Mail, Github, Linkedin, Twitter, ChevronRight, User, Eye } from 'lucide-react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/SplitText';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 interface Props {
-    data: any
+    data: any;
 }
-const Header: React.FC<Props> = ({ data }) => {
-    const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-        setIsVisible(true);
+const Header: React.FC<Props> = ({ data }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            const headlineSplit = SplitText.create('.split-headline', {
+                type: 'words',
+            });
+
+            const subtitleSplit = SplitText.create('.split-subtitle', {
+                type: 'words',
+            });
+
+            const taglineSplit = SplitText.create('.split-tagline', {
+                type: 'words',
+            });
+
+            // Headline animation (fade in/out per word)
+            gsap.from(headlineSplit.words, {
+                y: 60,
+                opacity: 0,
+                duration: 1.2, // Slower animation duration
+                stagger: 0.12, // Slower stagger
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.split-subtitle',
+                    start: 'top 85%',
+                    toggleActions: 'play reverse play reverse',
+                },
+            });
+
+            // Subtitle
+            gsap.from(subtitleSplit.words, {
+                y: 60,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.12,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: '.split-subtitle',
+                    start: 'top 85%',
+                    toggleActions: 'play reverse play reverse',
+                },
+            });
+
+            // Tagline
+            gsap.from(taglineSplit.words, {
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.1,
+                ease: 'power1.out',
+                scrollTrigger: {
+                    trigger: '.split-tagline',
+                    start: 'top 90%',
+                    toggleActions: 'play reverse play reverse',
+                },
+            });
+        }, containerRef);
+
+        return () => ctx.revert();
     }, []);
+
 
     return (
         <section
             id="about"
             className="w-full h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
-        > 
-
-            {/* Grid Pattern Overlay */}
+        >
             <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
 
-            {/* Main Content */}
             <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-4">
-                <div className={`text-center transition-all duration-2000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <div ref={containerRef} className="text-center transition-all duration-2000">
                     {/* Profile Image */}
                     <div className="mb-8 relative">
                         <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 p-1 shadow-2xl shadow-purple-500/25">
@@ -34,17 +94,19 @@ const Header: React.FC<Props> = ({ data }) => {
                     </div>
 
                     {/* Name and Title */}
-                    <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    <h1 className="split-headline text-6xl md:text-8xl font-bold mb-4 text-blue-800">
                         {data?.name || 'John Doe'}
                     </h1>
-                    <p className="text-xl md:text-2xl text-slate-300 mb-8 font-light">
+
+                    {/* Title */}
+                    <p className="split-subtitle text-xl md:text-2xl text-slate-300 mb-8 font-light">
                         {data?.title || 'Full Stack Developer'}
                     </p>
 
-                    {/* Animated Subtitle */}
-                    <div className="text-cyan-400 text-lg mb-12 font-mono">
-                        <span className="animate-pulse">{'>'}</span> {data?.tagline || 'Building the future, one line of code at a time'}
-                        <span className="animate-pulse ml-1">_</span>
+                    {/* Tagline */}
+                    <div className="split-tagline text-cyan-400 text-lg mb-12 font-mono">
+                        <span>{'>'}</span> {data?.tagline || 'Building the future, one line of code at a time'}
+                        <span className="ml-1">_</span>
                     </div>
 
                     {/* CTA Buttons */}
@@ -87,6 +149,5 @@ const Header: React.FC<Props> = ({ data }) => {
         </section>
     );
 };
-
 
 export default Header;
