@@ -13,14 +13,7 @@ const Skills: React.FC<Props> = ({ data }) => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
 
-  const skills = data?.skills || [
-    { name: 'React', level: 95, category: 'Frontend' },
-    { name: 'Node.js', level: 90, category: 'Backend' },
-    { name: 'TypeScript', level: 85, category: 'Language' },
-    { name: 'Python', level: 80, category: 'Language' },
-    { name: 'AWS', level: 75, category: 'Cloud' },
-    { name: 'Docker', level: 70, category: 'DevOps' }
-  ];
+  const skills = data?.skills;
 
   useEffect(() => {
     const ctx = gsap.context(() => {

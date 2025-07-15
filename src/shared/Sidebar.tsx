@@ -5,8 +5,6 @@ import {
   Award,
   GraduationCap,
   Mail,
-  Phone,
-  MapPin,
   Download,
   X
 } from "lucide-react";

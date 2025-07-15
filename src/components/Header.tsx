@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { Download, Mail, Github, Linkedin, Twitter, ChevronRight, User, Eye } from 'lucide-react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
@@ -95,12 +95,12 @@ const Header: React.FC<Props> = ({ data }) => {
 
                     {/* Name and Title */}
                     <h1 className="split-headline text-6xl md:text-8xl font-bold mb-4 text-blue-800">
-                        {data?.name || 'John Doe'}
+                        {data?.name || 'Yukisedhu R'}
                     </h1>
 
                     {/* Title */}
                     <p className="split-subtitle text-xl md:text-2xl text-slate-300 mb-8 font-light">
-                        {data?.title || 'Full Stack Developer'}
+                        {data?.role || 'Software Developer'}
                     </p>
 
                     {/* Tagline */}

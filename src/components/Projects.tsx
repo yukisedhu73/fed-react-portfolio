@@ -6,16 +6,11 @@ import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  github: string;
-  demo: string;
-  image?: string;
+interface Props {
+  data: any;
 }
 
-const Projects: React.FC = () => {
+const Projects: React.FC<Props> = () => {
   const [activeTab, setActiveTab] = useState<"professional" | "personal">("professional");
   const sectionRef = useRef<HTMLElement | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
@@ -119,7 +114,7 @@ const Projects: React.FC = () => {
 
         {/* Project Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project: Project, index: number) => (
+          {projects?.map((project: any, index: number) => (
             <div
               key={index}
               className="project-card group bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/20 hover:border-cyan-400/10"
@@ -165,7 +160,7 @@ const Projects: React.FC = () => {
                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
                 <p className="text-slate-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, i) => (
+                  {project.technologies.map((tech:any, i:any) => (
                     <span
                       key={i}
                       className="px-3 py-1 bg-slate-700/50 rounded-full text-cyan-400 text-sm"

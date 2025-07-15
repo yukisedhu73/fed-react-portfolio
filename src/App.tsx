@@ -5,8 +5,9 @@ import Portfolio from './pages/Portfolio'
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/portfolio" replace />} />
-      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/" element={<h1>Page Not Found</h1>} />
+      <Route path="/react-portfolio" element={<Portfolio type="react" />} />
+      <Route path="/angular-portfolio" element={<Portfolio type="angular" />} />
     </Routes>
   )
 }

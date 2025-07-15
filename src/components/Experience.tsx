@@ -14,22 +14,7 @@ const Experience: React.FC<Props> = ({ data }) => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
 
-  const experiences = data?.experience || [
-    {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Corp',
-      period: '2022 - Present',
-      description: 'Led development of scalable web applications using React and Node.js',
-      achievements: ['Increased performance by 40%', 'Led team of 5 developers', 'Implemented CI/CD pipeline']
-    },
-    {
-      title: 'Frontend Developer',
-      company: 'StartupXYZ',
-      period: '2020 - 2022',
-      description: 'Built responsive web applications with modern JavaScript frameworks',
-      achievements: ['Reduced bundle size by 60%', 'Implemented design system', 'Mentored junior developers']
-    }
-  ];
+  const experiences = data?.experience;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
