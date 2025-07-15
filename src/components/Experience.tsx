@@ -59,7 +59,7 @@ const Experience: React.FC<Props> = ({ data }) => {
       <div className="max-w-6xl mx-auto px-4">
         <h2
           ref={headingRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text"
+          className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text"
         >
           Experience
         </h2>
@@ -68,22 +68,20 @@ const Experience: React.FC<Props> = ({ data }) => {
           {experiences.map((exp: any, index: number) => (
             <div
               key={index}
-              className="exp-card bg-slate-900/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700/50 hover:border-cyan-400/30"
+              className="exp-card bg-slate-900/50 backdrop-blur-sm p-4 border border-slate-700/50 hover:border-cyan-400/30"
             >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-                  <p className="text-cyan-400 text-lg font-medium">{exp.company}</p>
-                </div>
-                <span className="text-slate-400 font-medium mt-2 md:mt-0">{exp.period}</span>
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold text-white mb-1">{exp.title}</h3>
+                <p className="text-cyan-400 text-lg font-medium mb-1">{exp.company}</p>
+                <span className="text-slate-400 text-sm">{exp.period}</span>
               </div>
 
-              <p className="text-slate-300 mb-4 text-lg">{exp.description}</p>
+              <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-4">{exp.description}</p>
 
               <div className="space-y-2">
                 {exp.achievements.map((achievement: string, i: number) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <ChevronRight size={16} className="text-cyan-400" />
+                  <div key={i} className="flex items-start gap-2">
+                    <ChevronRight size={16} className="text-cyan-400 mt-1" />
                     <span className="text-slate-300">{achievement}</span>
                   </div>
                 ))}
@@ -93,6 +91,7 @@ const Experience: React.FC<Props> = ({ data }) => {
         </div>
       </div>
     </section>
+
   );
 };
 

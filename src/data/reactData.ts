@@ -20,18 +20,31 @@ const reactData = {
     ],
     experience: [
         {
-            title: 'Senior Full Stack Developer',
-            company: 'Tech Corp',
-            period: '2022 - Present',
-            description: 'Led development of scalable web applications using React and Node.js',
-            achievements: ['Increased performance by 40%', 'Led team of 5 developers', 'Implemented CI/CD pipeline']
+            title: 'Software Developer',
+            company: 'Digitide, Coimbatore, TN',
+            period: 'Apr 2025 - Present (Internal Transfer)',
+            description: 'Built scalable React.js applications and contributed to AI chatbot frontend, while upskilling in full-stack PERN development.',
+            achievements: ['Delivered modular, reusable components that reduced development time and improved maintainability.',
+                'Proactively learned backend (Node.js + PostgreSQL) to support full-stack tasks and increase delivery speed.'
+            ]
         },
         {
-            title: 'Frontend Developer',
-            company: 'StartupXYZ',
-            period: '2020 - 2022',
-            description: 'Built responsive web applications with modern JavaScript frameworks',
-            achievements: ['Reduced bundle size by 60%', 'Implemented design system', 'Mentored junior developers']
+             title: 'Software Developer',
+            company: 'Conneqt Digital, Coimbatore, TN',
+            period: 'Sep 2023 - Mar 2025 (Internal Transfer)',
+            description: 'Developed high-performance React.js apps with Redux, integrated Microsoft SSO, and contributed to Agile development cycles.',
+            achievements: ['Implemented code-splitting and lazy loading to enhance app load times and efficiency.',
+                'Actively participated in code reviews and sprint ceremonies, improving team collaboration and code quality.'
+            ]
+        },
+        {
+            title: 'Software Developer',
+            company: 'Heptagon Technologies, Coimbatore, TN',
+            period: 'Dec 2021 - Sep 2023',
+            description: 'Created responsive, cross-browser web interfaces using React and TypeScript, ensuring seamless API integration and accessibility.',
+            achievements: ['Improved UI/UX by enhancing web accessibility and implementing dynamic, responsive layouts.',
+                'Identified and resolved performance bottlenecks, leading to faster rendering and better user engagement.'
+            ]
         }
     ],
     projects: [],
