@@ -83,7 +83,7 @@ const Projects: React.FC<Props> = () => {
         {/* Heading */}
         <h2
           ref={headingRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
+          className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text"
         >
           Featured Projects
         </h2>

@@ -70,10 +70,12 @@ const Experience: React.FC<Props> = ({ data }) => {
               key={index}
               className="exp-card bg-slate-900/50 backdrop-blur-sm p-4 border border-slate-700/50 hover:border-cyan-400/30"
             >
-              <div className="mb-4">
-                <h3 className="text-2xl font-bold text-white mb-1">{exp.title}</h3>
-                <p className="text-cyan-400 text-lg font-medium mb-1">{exp.company}</p>
-                <span className="text-slate-400 text-sm">{exp.period}</span>
+              <div className="mb-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold text-white">{exp.title}</h3>
+                  <p className="text-cyan-400 text-lg font-medium">{exp.company}</p>
+                </div>
+                <span className="text-slate-400 text-sm whitespace-nowrap">{exp.period}</span>
               </div>
 
               <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-4">{exp.description}</p>
