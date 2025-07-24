@@ -51,21 +51,7 @@ const Education: React.FC<Props> = ({ data }) => {
     return () => ctx.revert();
   }, []);
 
-  const education = data?.education || [
-    {
-      degree: "Bachelor of Science in Computer Science",
-      school: "University of Technology",
-      period: "2016 - 2020",
-      gpa: "3.8/4.0",
-      achievements: ["Cum Laude", "Dean's List", "Programming Competition Winner"],
-    },
-    {
-      degree: "Full Stack Web Development Certificate",
-      school: "Tech Bootcamp",
-      period: "2020",
-      achievements: ["Top 10% of class", "Capstone Project Award"],
-    },
-  ];
+  const education = data?.education || [];
 
   return (
     <section id="education" ref={sectionRef} className="py-20 bg-slate-800">
@@ -97,7 +83,7 @@ const Education: React.FC<Props> = ({ data }) => {
               </div>
 
               <div className="space-y-2">
-                {edu.achievements.map((achievement: any, i: number) => (
+                {edu?.achievements?.map((achievement: any, i: number) => (
                   <div key={i} className="flex items-center gap-2">
                     <Award size={16} className="text-cyan-400" />
                     <span className="text-slate-300">{achievement}</span>

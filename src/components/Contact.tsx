@@ -7,19 +7,12 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 interface Props {
-  data: any;
+    data: any;
 }
 
-const Contact: React.FC<Props> = () => {
+const Contact: React.FC<Props> = ({ data }) => {
     const sectionRef = useRef<HTMLElement | null>(null);
     const headingRef = useRef<HTMLHeadingElement | null>(null);
-
-    const data = {
-        email: "yukisedhu@gmail.com",
-        phone: "+91 9876543210",
-        location: "Chennai, India",
-        linkedin: "https://linkedin.com/in/yourprofile"
-    };
 
     useEffect(() => {
         const ctx = gsap.context(() => {

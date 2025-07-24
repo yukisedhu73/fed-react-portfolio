@@ -10,10 +10,12 @@ interface Props {
   data: any;
 }
 
-const Projects: React.FC<Props> = () => {
+const Projects: React.FC<Props> = ({ data }) => {
   const [activeTab, setActiveTab] = useState<"professional" | "personal">("professional");
   const sectionRef = useRef<HTMLElement | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
+
+  const projects = data?.projects[0]?.[activeTab] || [];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,31 +54,6 @@ const Projects: React.FC<Props> = () => {
     return () => ctx.revert();
   }, [activeTab]);
 
-  const data = {
-    professional: [
-      {
-        title: "E-commerce Platform",
-        description: "Full-stack e-commerce solution with React, Node.js, and MongoDB",
-        technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-        github: "https://github.com/yourrepo1",
-        demo: "https://demo.com/ecommerce",
-        image: "/images/ecommerce.jpg",
-      },
-    ],
-    personal: [
-      {
-        title: "Weather App",
-        description: "Real-time weather dashboard using OpenWeatherMap API.",
-        technologies: ["React", "TypeScript", "API"],
-        github: "https://github.com/yourrepo2",
-        demo: "https://demo.com/weather",
-        image: "/images/weather.jpg",
-      },
-    ],
-  };
-
-  const projects = data?.[activeTab] || [];
-
   return (
     <section id="projects" ref={sectionRef} className="py-20 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4">
@@ -91,24 +68,22 @@ const Projects: React.FC<Props> = () => {
         {/* Toggle Buttons */}
         <div className="flex justify-center mb-12 space-x-4">
           <button
-            onClick={() => setActiveTab("professional")}
-            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-              activeTab === "professional"
-                ? "bg-cyan-500 text-white"
-                : "bg-white/10 text-slate-300 hover:bg-white/20"
-            }`}
-          >
-            Professional Projects
-          </button>
-          <button
             onClick={() => setActiveTab("personal")}
-            className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-              activeTab === "personal"
-                ? "bg-purple-500 text-white"
-                : "bg-white/10 text-slate-300 hover:bg-white/20"
-            }`}
+            className={`px-6 py-2 mx-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === "personal"
+              ? "bg-purple-500 text-white"
+              : "bg-white/10 text-slate-300 hover:bg-white/20"
+              }`}
           >
             Personal Projects
+          </button>
+          <button
+            onClick={() => setActiveTab("professional")}
+            className={`px-6 py-2 mx-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === "professional"
+              ? "bg-cyan-500 text-white"
+              : "bg-white/10 text-slate-300 hover:bg-white/20"
+              }`}
+          >
+            Professional Projects
           </button>
         </div>
 
@@ -136,22 +111,26 @@ const Projects: React.FC<Props> = () => {
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-cyan-500 rounded-full hover:bg-cyan-400 transition-colors"
-                  >
-                    <Github size={20} className="text-white" />
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-purple-500 rounded-full hover:bg-purple-400 transition-colors"
-                  >
-                    <ExternalLink size={20} className="text-white" />
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-cyan-500 rounded-full hover:bg-cyan-400 transition-colors"
+                    >
+                      <Github size={20} className="text-white" />
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-purple-500 rounded-full hover:bg-purple-400 transition-colors"
+                    >
+                      <ExternalLink size={20} className="text-white" />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -160,7 +139,7 @@ const Projects: React.FC<Props> = () => {
                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
                 <p className="text-slate-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech:any, i:any) => (
+                  {project.technologies.map((tech: any, i: any) => (
                     <span
                       key={i}
                       className="px-3 py-1 bg-slate-700/50 rounded-full text-cyan-400 text-sm"
