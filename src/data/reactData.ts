@@ -1,12 +1,14 @@
 const reactData = {
     type: "React",
     name: "Yukisedhu R",
+    initials:"YR",
     role: "Software Developer",
     tagline: "Building the future, one line of code at a time",
     email: "yukisedhu@gmail.com",
     phone: "+91-7358863984",
     location: "Coimbatore, TN",
     linkedin: "https://www.linkedin.com/in/yukisedhu/",
+    github: "https://github.com/yukisedhu73",
     skills: [
         { name: 'HTML5, CSS3', level: 97, category: 'Languages' },
         { name: 'Javascript, TypeScript', level: 93, category: 'Languages' },

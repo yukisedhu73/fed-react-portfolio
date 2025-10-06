@@ -111,11 +111,22 @@ const Header: React.FC<Props> = ({ data }) => {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full font-semibold text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:scale-105 transition-all duration-300">
+                        <button
+                            onClick={() => {
+                                const element = document.getElementById("projects");
+                                if (element) {
+                                    element.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }}
+                            className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full font-semibold text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:scale-105 transition-all duration-300"
+                        >
                             <span className="flex items-center gap-2">
                                 <Eye size={20} />
                                 View My Work
-                                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                <ChevronRight
+                                    size={16}
+                                    className="group-hover:translate-x-1 transition-transform"
+                                />
                             </span>
                         </button>
 
@@ -138,6 +149,7 @@ const Header: React.FC<Props> = ({ data }) => {
                             <a
                                 key={index}
                                 href={social.href}
+                                target='blank'
                                 className="group w-12 h-12 border-2 border-slate-600 rounded-full flex items-center justify-center hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-300"
                             >
                                 <social.icon size={20} className="text-slate-400 group-hover:text-cyan-400 transition-colors" />

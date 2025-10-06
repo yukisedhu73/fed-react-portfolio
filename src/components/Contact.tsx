@@ -56,7 +56,7 @@ const Contact: React.FC<Props> = ({ data }) => {
             <div className="max-w-6xl mx-auto px-4">
                 <h2
                     ref={headingRef}
-                    className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
+                    className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text"
                 >
                     Get In Touch
                 </h2>
