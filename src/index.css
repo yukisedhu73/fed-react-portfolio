@@ -1,68 +1,101 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Global CSS for Portfolio Website */
+/* Add this to your global CSS file (e.g., globals.css, index.css, or App.css) */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+@import "tailwindcss";
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f172a;
+  color: #ffffff;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body #root {
+  padding: 0 !important;
+  max-width: 100% !important;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@theme {
+  /* === Colors === */
+  --color-neon-cyan: #06b6d4;
+  --color-neon-purple: #8b5cf6;
+  --color-neon-pink: #ec4899;
+  --color-neon-green: #22c55e;
+  --color-neon-blue: #3b82f6;
+  --color-neon-yellow: #eab308;
+
+  --color-slate-750: #293548;
+  --color-slate-850: #1a202c;
+  --color-slate-925: #0f1419;
+
+  /* === Fonts === */
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-mono: Fira Code, Monaco, Consolas, monospace;
+
+  /* === Breakpoints === */
+  --screen-xs: 475px;
+  --screen-3xl: 1920px;
+
+  /* === Spacing === */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  /* === Border Radius === */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  /* === Font Sizes === */
+  --text-2xs: 0.625rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
+
+  /* === Z-Index === */
+  --z-60: 60;
+  --z-70: 70;
+  --z-80: 80;
+  --z-90: 90;
+  --z-100: 100;
+
+  /* === Transitions === */
+  --duration-2000: 2000ms;
+  --duration-3000: 3000ms;
+  --duration-4000: 4000ms;
+  --duration-5000: 5000ms;
+
+  --delay-2000: 2000ms;
+  --delay-3000: 3000ms;
+  --delay-4000: 4000ms;
+  --delay-5000: 5000ms;
+
+  /* === Background Sizes === */
+  --bg-size-grid: 50px 50px;
+
+  /* === Shadows === */
+  --shadow-neon: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+  --shadow-neon-purple: 0 0 10px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.1);
+  --shadow-neon-pink: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(236, 72, 153, 0.3), 0 0 40px rgba(236, 72, 153, 0.1);
+  --shadow-glow-sm: 0 0 10px rgba(6, 182, 212, 0.3);
+  --shadow-glow-md: 0 0 20px rgba(6, 182, 212, 0.4);
+  --shadow-glow-lg: 0 0 30px rgba(6, 182, 212, 0.5);
 }
