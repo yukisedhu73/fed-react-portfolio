@@ -3,7 +3,7 @@ const reactData = {
     name: "Yukisedhu R",
     initials:"YR",
     role: "Software Developer",
-    tagline: "Building the future, one line of code at a time",
+    tagline: "Aspiring developer crafting clean and creative user interfaces",
     email: "yukisedhu@gmail.com",
     phone: "+91-7358863984",
     location: "Coimbatore, TN",
